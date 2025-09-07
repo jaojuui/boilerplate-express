@@ -8,7 +8,7 @@ console.log("Hello World");
 pathView = __dirname + '/views/index.html'
 pathPublic = __dirname + '/public'
 
-
+app.use(bodyParser.urlencoded({extended: false}));
 app.get("/", (req, res) => {
   res.sendFile(pathView);
 });
@@ -38,5 +38,4 @@ app.get("/name",(req,res)=>{
     res.json({name:`${req.query.first} ${req.query.last}`});
 })
 
-app.use(bodyParser.urlencoded({extended: false}));
  module.exports = app;
