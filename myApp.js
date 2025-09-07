@@ -15,16 +15,11 @@ app.use('/public', express.static(pathPublic));
 
 app.get("/json", (req, res) => {
   let message = "Hello json";
-  console.log(process.env.MESSAGE_STYLE);
-
-  // ต้องอ่านค่าจาก process.env **ภายใน** route handler!
   if (process.env.MESSAGE_STYLE === "uppercase") {
     message = message.toUpperCase();
   }
-
   res.json({ message: message });
 });
-
 
 
  module.exports = app;
