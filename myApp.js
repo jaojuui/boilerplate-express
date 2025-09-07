@@ -1,11 +1,40 @@
-const express = require('express');
-const app = express();
-
 console.log("Hello World");
 
-// สร้าง route พื้นฐาน
-app.get("/", (req, res) => {
-  res.send("Hello Express");
-});
+let express = require('express'); 
+let app = express();
 
+// ต้องมีบรรทัดนี้ด้วยเพื่อให้ระบบตรวจ app ได้
 module.exports = app;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ module.exports = app;
