@@ -17,6 +17,7 @@ app.get("/json", (req, res) => {
  console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 });
+new Date().toString()
 app.get("/now", (req,res)=>{
     res.json({time: req.time});
 })
