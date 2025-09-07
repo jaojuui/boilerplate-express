@@ -17,6 +17,9 @@ app.get("/json", (req, res) => {
  console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 });
+app.get("/now", (req,res)=>{
+    res.json({time: req.time});
+})
 
 
 
