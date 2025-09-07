@@ -12,13 +12,19 @@ app.get("/", (req, res) => {
 });
 
 app.use('/public', express.static(pathPublic));
-
+app.get('/user', function(req, res, next) {
+  req.user = getTheUserSync();  // Hypothetical synchronous operation
+  next();
+}, function(req, res) {
+  res.send(req.user);
+});
 app.get("/json", (req, res) => {
  console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 });
-new Date().toString()
 app.get("/now", (req,res)=>{
+    req.time=new Date().toString();
+    next();
     res.json({time: req.time});
 })
 
