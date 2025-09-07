@@ -23,7 +23,7 @@ app.get("/json", (req, res) => {
   res.json({ message: message });
 });
 
-
+module.exports = app;
 
 
 
