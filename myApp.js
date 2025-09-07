@@ -1,13 +1,15 @@
 let express = require('express');
 let app = express();
 console.log("Hello World");
-
-path = __dirname + '/views/index.html'
+pathView = __dirname + '/views/index.html'
+pathPublic = __dirname + '/public'
 
 app.get("/", (req, res) => {
-  res.sendFile(path);
+  res.sendFile(pathView);
 });
-
+app.get("/public", (req, res) => {
+  res.sendFile(pathPublic);
+});
 
 
 
